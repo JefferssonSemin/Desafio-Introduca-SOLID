@@ -24,6 +24,8 @@ class UsersRepository implements IUsersRepository {
     Object.assign(user, {
       name,
       email,
+      created_at: new Date(),
+      updated_at: new Date(),
     });
 
     this.users.push(user);
@@ -48,8 +50,6 @@ class UsersRepository implements IUsersRepository {
       admin: true,
       updated_at: new Date(),
     });
-
-    this.users.push(userUpdated);
 
     return userUpdated;
   }
