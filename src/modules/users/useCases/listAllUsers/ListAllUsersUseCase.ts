@@ -21,10 +21,6 @@ class ListAllUsersUseCase {
 
     const users = this.usersRepository.list();
 
-    if (!users) {
-      throw new Error("Users not found.");
-    }
-
     return users;
   }
 }
