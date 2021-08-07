@@ -1,0 +1,89 @@
+{
+  "openapi":"3.0.0",
+  "info":{
+    "title":"Introdução ao SOLID",
+    "description":"This is an API SOLID",
+    "version":"1.0.0",
+    "contact":{
+      "email":"fuchsjeffe@gmail.com"
+    }
+  },
+  "paths":{
+    "/user":{
+      "post":{
+        "tags":["User"],
+        "summary": "Create a user",
+        "description":"Create a new user",
+        "requestBody":{
+          "content":{
+            "application/json":{
+              "schema":{
+                "type":"object",
+                "properties":{
+                  "name":{
+                    "type": "string"
+                  },
+                  "email":{
+                    "type":"string"
+                  }
+                },
+                "example":{
+                  "name": "category name sample",
+                  "email":"fuchs@gmail.com"
+                }
+              }
+            }
+          }
+        },
+        "responses":{
+          "201":{
+            "description":"Created"
+          },
+          "400":{
+            "description":"User already exists"
+          }
+        }
+      },
+      "get":{
+        "tag":["User"],
+        "summary":"List all users",
+        "description":"List all users",
+        "responses":{
+          "200":{
+            "description":"Success",
+            "content":{
+              "application/json":{
+                "schema":{
+                  "type":"array",
+                  "items":{
+                    "type":"object",
+                  "properties":{
+                    "name":{
+                      "type":"string"
+                    },
+                    "email":{
+                      "type":"string"
+                    },
+                    "id": {
+                      "type":"string"
+                    },
+                    "created_at": {
+                      "type":"string"
+                    },
+                    "updated_at": {
+                      "type":"string"
+                    },
+                    "admin": {
+                      "type":"boolean"
+                    }
+                    }
+                  }                  
+                }
+              }           
+             }
+          }
+        }
+      }
+    }
+  }
+}
